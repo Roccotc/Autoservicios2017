@@ -41,6 +41,8 @@ module.exports.routes = {
   'POST /login-admin'  : 'AdminsController.login',
   '/inicio'  : 'InicioController.cargar',
   '/inicio-admin'  : { view: 'inicio-admin'},
+  '/inicio-cliente'  : { view: 'inicio-cliente'},
+  '/servicios'  : { view: 'servicios'},
 
 
   /***************************************************************************
