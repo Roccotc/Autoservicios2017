@@ -22,7 +22,7 @@ module.exports = {
       if(user.clave == req.param('clave'))
       {
       	req.session.me = user.id;   // Se guarda la sesión de un usuario
-      	return res.view('inicio', {
+      	return res.view('inicio-cliente', {
 	        usuario: 
 		        {
 		          id: user.id,

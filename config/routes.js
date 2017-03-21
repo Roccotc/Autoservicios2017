@@ -43,6 +43,8 @@ module.exports.routes = {
   '/inicio-admin'  : { view: 'inicio-admin'},
   '/inicio-cliente'  : { view: 'inicio-cliente'},
   '/servicios'  : { view: 'servicios'},
+  '/servicios'  : 'ServiciosController.carga',
+
 
 
   /***************************************************************************
