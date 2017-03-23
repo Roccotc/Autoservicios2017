@@ -7,7 +7,7 @@
 
 module.exports = {
 	
-	carga: function (req, res, next) {
+	/*carga: function (req, res, next) {
 
     Servicios.query('select * from servicios',function(err, servicios){
 
@@ -23,7 +23,7 @@ module.exports = {
 			});
 		});
 
-  },
+  },*/
 
 };
 

@@ -28,36 +28,15 @@
 	<style type="text/css">
 
 		.mdl-card {
-
 			width: 500px;
 		}
 
 		table {
-
 			width: 400px;
-
 		}
 
-		body {
-
-			background: url("/images/fondo.jpg");
-			background-repeat: no-repeat;
-			background-position: center center;
-			background-attachment: fixed;
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-
-		}
-
-		#text {
-
-			color: red;
-			background-color: white;
-			padding: 10px;
-			border-radius: 10px;
-			box-shadow: 7px 7px 5px #111;
+		.demo-ribbon {
+			height: 250px;
 		}
 
 	</style>
@@ -78,13 +57,18 @@
 	
 		<div class="mdl-layout__drawer">
 			<span class="mdl-layout-title">Menú</span>
+			<nav class="mdl-navigation">
+          		<a class="mdl-navigation__link" href="/">Home</a>
+          		<a class="mdl-navigation__link" href="/inicio-cliente">Estado</a>
+          		<a class="mdl-navigation__link" href="/factura">Factura</a>
+        	</nav>
 		</div>
 	
 		<main class="mdl-layout__content">
 			<section class="mdl-layout__tab-panel" id="fixed-tab-1">
 				<div class="page-content">
 				<!-- Your content goes here -->
-					
+					<div class="demo-ribbon mdl-color--blue-200">
 					<div style="padding: 20px" align="center">
 						<h3>¡Bienvenido Fulanito!</h3>
 
@@ -119,23 +103,26 @@
 						</table>
 						</div>
 
-						<big id="text" >Si quieres solicitar otro servicio dirigete a la pestaña "PEDIR SERVICIO" o pulsa el botón a continuación</big>
-
-						<br><br><br>
+						<br>
 
 
 						<a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/servicios">
 							Servicios
 						</a>
 
+						<a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/factura">
+							Revisar Factura
+						</a>
+
 
 					</div>
-
+					</div>
 				</div>
 			</section>
 		
 			<section class="mdl-layout__tab-panel is-active" id="fixed-tab-2">
 				<div class="page-content"><!-- Your content goes here -->
+				<div class="demo-ribbon mdl-color--blue-200">
 					<div style="padding: 30px" align="center">
 
 				<h4>Servicios Disponibles</h4>
@@ -196,7 +183,7 @@
 								</form>
 							</div>
 							<div class="mdl-card__actions mdl-card--border">
-								<button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Aceptar</button>
+								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/inicio-cliente">Aceptar</a>
 							</div>
 						</div>
 					</main>
@@ -205,10 +192,57 @@
 
 				</div>
 				</div>
+				</div>
 			</section>
 		
 			<section class="mdl-layout__tab-panel" id="fixed-tab-3">
-				<div class="page-content"><!-- Your content goes here --></div>
+				<div class="page-content">
+					
+					<div class="demo-ribbon mdl-color--blue-200">
+					<div style="padding: 20px" align="center">
+
+						<h4>Factura por los Servicios</h4>
+
+						<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+							<thead>
+								<tr>
+									<th class="mdl-data-table__cell--non-numeric">Vehiculo</th>
+									<th class="mdl-data-table__cell--non-numeric">Servicio</th>
+									<th class="mdl-data-table__cell--non-numeric">Precio</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Ford Mustang Shelby</td>
+									<td>Frenos</td>
+									<td>$300</td>
+								</tr>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Ford Mustang Shelby</td>
+									<td>Cambio de Aceite</td>
+									<td>$594</td>
+								</tr>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Toyota 4Runner TRD</td>
+									<td>Cambio de Aceite</td>
+									<td>$594</td>
+								</tr>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Chevrolet Optra</td>
+									<td>Motor</td>
+									<td>$1000</td>
+								</tr>
+							</tbody>
+				</table>
+							<br><br>
+							<a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="#">
+							Pagar
+						</a>
+
+					</div>
+					</div>
+
+				</div>
 			</section>
 		</main>
 	</div>

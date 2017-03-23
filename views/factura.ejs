@@ -26,7 +26,7 @@
 <body>
 
 	<style type="text/css">
-		
+
 		.mdl-card {
 			width: 500px;
 		}
@@ -49,9 +49,9 @@
 			</div>
 			<!-- Tabs -->
 			<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-				<a href="#fixed-tab-1" class="mdl-layout__tab is-active">Estado</a>
+				<a href="#fixed-tab-1" class="mdl-layout__tab">Estado</a>
 				<a href="#fixed-tab-2" class="mdl-layout__tab">Pedir Servicio</a>
-				<a href="#fixed-tab-3" class="mdl-layout__tab">Factura</a>
+				<a href="#fixed-tab-3" class="mdl-layout__tab is-active">Factura</a>
 			</div>
 		</header>
 	
@@ -59,13 +59,13 @@
 			<span class="mdl-layout-title">Menú</span>
 			<nav class="mdl-navigation">
           		<a class="mdl-navigation__link" href="/">Home</a>
+          		<a class="mdl-navigation__link" href="/inicio-cliente">Estado</a>
           		<a class="mdl-navigation__link" href="/servicios">Pedir Servicio</a>
-          		<a class="mdl-navigation__link" href="/factura">Factura</a>
         	</nav>
 		</div>
-		
+	
 		<main class="mdl-layout__content">
-			<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+			<section class="mdl-layout__tab-panel" id="fixed-tab-1">
 				<div class="page-content">
 				<!-- Your content goes here -->
 					<div class="demo-ribbon mdl-color--blue-200">
@@ -122,8 +122,8 @@
 		
 			<section class="mdl-layout__tab-panel" id="fixed-tab-2">
 				<div class="page-content"><!-- Your content goes here -->
-				<div class="demo-ribbon mdl-color--blue-200">
-				<div style="padding: 30px" align="center">
+					<div class="demo-ribbon mdl-color--blue-200">
+					<div style="padding: 30px" align="center">
 
 				<h4>Servicios Disponibles</h4>
 
@@ -154,7 +154,7 @@
 									<td>$1000</td>
 								</tr>
 							</tbody>
-						</table>
+				</table>
 
 						<br><br>
 					
@@ -189,19 +189,18 @@
 					</main>
 				</div>
 
-
 				</div>
-    			</div>
+				</div>
 				</div>
 			</section>
 		
-			<section class="mdl-layout__tab-panel" id="fixed-tab-3">
+			<section class="mdl-layout__tab-panel is-active" id="fixed-tab-3">
 				<div class="page-content">
-					
+
 					<div class="demo-ribbon mdl-color--blue-200">
 					<div style="padding: 20px" align="center">
 
-						<h4>Factura por los Servicios</h4>
+					<h4>Factura por los Servicios</h4>
 
 						<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 							<thead>
