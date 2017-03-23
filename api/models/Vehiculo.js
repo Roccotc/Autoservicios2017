@@ -1,5 +1,5 @@
 /**
- * User.js
+ * Vehiculo.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -9,38 +9,46 @@ module.exports = {
 
   attributes: {
 
-  	nombre : { 
+  	marca : { 
   		type: 'string',
   		required: true,
   	},
 
-  	apellido : {
+  	modelo : { 
   		type: 'string',
   		required: true,
   	},
 
-  	email : {
+  	cilindrada : { 
   		type: 'string',
-  		email: true,
+  		required: true,
+  	},
+
+  	placa : { 
+  		type: 'string',
   		required: true,
   		unique: true,
-  	},   
+  	},
 
-    cedula : {
-      type: 'string',
-      required: true,
-      unique: true,
-    },
+  	tipo : { 
+  		type: 'string',
+  		required: true,
+  	},
 
-    telefono : {
-      type: 'string',
-      required: true,
-      unique: true,
-    },
+  	año : { 
+  		type: 'int',
+  		required: true,
+  	},
 
-    direccion: {
-      type: 'string',
-    },
+  	numero_visita : { 
+  		type: 'int',
+  		required: true,
+  	},
+
+  	user_id : { 
+  		type: 'int',
+  		required: true,
+  	},
 
   }
 };
