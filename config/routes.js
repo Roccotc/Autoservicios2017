@@ -44,6 +44,7 @@ module.exports.routes = {
   '/servicios'  : { view: 'servicios'},
   /*'/servicios'  : 'ServiciosController.carga',*/
   '/factura'  : { view: 'factura'},
+  '/reportes admin'  : 'AdminsController.reportes' ,
 
 
 

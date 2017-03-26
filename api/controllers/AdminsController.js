@@ -10,7 +10,7 @@ module.exports = {
 	login: function (req, res) {
 
     // Busca en la Base de Datos el correo
-
+		console.log(" entro f login admin ");
       Admins.findOne({
       email: req.param('email')
     }, function foundUser(err, user) {
@@ -21,6 +21,7 @@ module.exports = {
 
       if(user.clave == req.param('clave'))
       {
+				console.log("Incio de sesion exitoso");
       	req.session.me = user.id;   // Se guarda la sesión de un admin
 
 				// Busca todas las citas
@@ -30,7 +31,7 @@ module.exports = {
 					console.log("Facturas capturadas");
 
 
-					return res.view('inicio-admins', {
+					return res.view('inicio-admin', {
 						usuario_admin:
 							{
 								id: user.id,
@@ -38,7 +39,7 @@ module.exports = {
 								email: user.email,
 								apellido: user.apellido,
 							},
-							
+
 							ordenes: facturas
 
 					});
@@ -55,5 +56,12 @@ module.exports = {
     });
 
   },
+
+	reportes: function (req, res) {
+
+		
+
+		return res.view('reportes-admin');
+},
 
 };
