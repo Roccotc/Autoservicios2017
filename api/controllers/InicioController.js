@@ -6,8 +6,8 @@
  */
 
 module.exports = {
-	
-cargar: function (req, res) {
+
+cargarAdmin: function (req, res) {
 
     // Si no esta loggeado que lo lleve al homepage
     if (!req.session.me) {
@@ -16,9 +16,7 @@ cargar: function (req, res) {
     	return res.view('homepage');
     }
 
-    // Busca las citas actuales
 
   },
 
 };
-

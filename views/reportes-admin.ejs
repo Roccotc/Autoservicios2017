@@ -1,13 +1,10 @@
-<!doctype html>
-
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Inicio | Administración</title>
+    <title>Reportes | Administración</title>
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -26,6 +23,13 @@
       z-index: 900;
     }
     </style>
+
+    <!-- Grafico -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <script type="text/javascript">
+         google.charts.load('current', {packages: ['corechart']});
+       </script>
+
   </head>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -76,36 +80,12 @@
     </div>
 
 
+
         <!-- Navigation End -->
         <!-- Contenido -->
 
-        <table id="top" align="center" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" width="800">
-        <thead>
-          <tr>
-            <th class="mdl-data-table__cell--non-numeric">Servicio Realizado</th>
-            <th>Nombre del Cliente</th>
-            <th>Cedula</th>
-            <th>Vehículo</th>
-            <th>Fecha</th>
-            <th>Estado</th>
-            <th>Ver Factura</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% ordenes.forEach(function(orden)  { %>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"><%= orden.servicioRealizado %></td>
-            <td><%= orden.nombreCliente %></td>
-            <td><%= orden.cedulaCliente %></td>
-            <td><%= orden.marcaVehiculo %></td>
-            <td><%= orden.fecha %></td>
-            <td><%= orden.status %></td>
-            <td><a  href="/inicio-admin/ver-factura/<%= orden.id %>" class="mdl-button">Ver</a></td>
-          </tr>
-          <tr>
-          <% }); %>
-        </tbody>
-      </table>
+        <h2>Servicios/Ventas</h2>
+        <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 
       <!-- End Contenido -->
 
@@ -124,12 +104,32 @@
             <p class="mdl-typography--font-light">Rocco Tarantino</p>
             <p class="mdl-typography--font-light">Administración de Base de Datos-2017</p>
           </div>
-
         </footer>
 
 
 
-    <a href="/cita" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast" data-upgraded=",MaterialButton,MaterialRipple">Nueva Cita<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 255.952px; height: 255.952px; transform: translate(-50%, -50%) translate(58px, 12px);"></span></span></a>
+    <script>
+      function drawChart() {
+         // Define the chart to be drawn.
+         var data = google.visualization.arrayToDataTable([
+            ['Year', 'Asia'],
+      	  ['2012',  900],
+            ['2013',  1000],
+            ['2014',  1170],
+            ['2015',  1250],
+            ['2016',  1530]
+            ]);
+
+         var options = {
+            title: 'Population (in millions)'
+         };
+
+         // Instantiate and draw the chart.
+         var chart = new google.visualization.BarChart(document.getElementById('container'));
+         chart.draw(data, options);
+      }
+      google.charts.setOnLoadCallback(drawChart);
+    </script>
 
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </body>

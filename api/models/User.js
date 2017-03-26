@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
 
-  	nombre : { 
+  	nombre : {
   		type: 'string',
   		required: true,
   	},
@@ -24,7 +24,7 @@ module.exports = {
   		email: true,
   		required: true,
   		unique: true,
-  	},   
+  	},
 
     cedula : {
       type: 'string',
@@ -34,14 +34,16 @@ module.exports = {
 
     telefono : {
       type: 'string',
-      required: true,
-      unique: true,
     },
 
     direccion: {
       type: 'string',
     },
 
+    clave: {
+      type: 'string',
+      required: true,
+    },
+
   }
 };
-
