@@ -17,7 +17,8 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-   connection: 'sailsMSSQLServer',
+   //connection: 'sailsMSSQLServer',
+   connection: 'localDiskDb',
 
   /***************************************************************************
   *                                                                          *
