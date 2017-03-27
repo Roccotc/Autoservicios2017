@@ -11,6 +11,10 @@ module.exports = {
 
     //connection: 'sailsMSSQLServer',
 
+     schema: true,
+    connection: 'sqlserver',
+    tableName: 'vehiculo',
+
   	marca : {
   		type: 'string',
   		required: true,

@@ -7,6 +7,9 @@
 
 module.exports = {
 
+   
+    connection: 'localDiskDb',
+
   attributes: {
 
     nombre : {

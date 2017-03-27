@@ -7,6 +7,10 @@
 
 module.exports = {
 
+ schema: true,
+    connection: 'sqlserver',
+    tableName: 'servicios',
+
   attributes: {
 
   	nombre : { 

@@ -9,6 +9,10 @@ module.exports = {
 
   //connection: 'sailsMSSQLServer',
 
+   schema: true,
+    connection: 'sqlserver',
+    tableName: 'usuarios',
+
   attributes: {
 
   	nombre : {

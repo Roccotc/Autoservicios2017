@@ -48,15 +48,12 @@ module.exports.connections = {
   //   database: 'YOUR_MYSQL_DB' //optional
   // },
 
-  sailsMSSQLServer: {
+  sqlserver: {
     adapter: 'sails-sqlserver',
     user: 'autoservicio',
     password: '123',
     host: 'localhost',
     database: 'Autoservicio',
-    options: {
-      encrypt: true
-    }
 }
 
   /***************************************************************************
