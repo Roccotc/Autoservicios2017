@@ -7,6 +7,8 @@
 
 module.exports = {
 
+  //connection: 'sailsMSSQLServer',
+
   attributes: {
 
   	nombre : {

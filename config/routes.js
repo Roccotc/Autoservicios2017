@@ -40,11 +40,10 @@ module.exports.routes = {
   'GET /login-admin'  : { view: 'login-admin'},
   'POST /login-admin'  : 'AdminsController.login',
   '/inicio-admin'  : { view: 'inicio-admin'},
-  '/inicio-cliente'  : { view: 'inicio-cliente'},
-  '/servicios'  : { view: 'servicios'},
-  /*'/servicios'  : 'ServiciosController.carga',*/
+  '/inicio-cliente'  :  'ServiciosController.carga',
   '/factura'  : { view: 'factura'},
-  '/reportes-admin'  : 'AdminsController.reportes' ,
+  '/reportes-admin'  : 'AdminsController.reportes',
+  'POST /registrarexitoso' : 'ServiciosController.agregarserv',
 
 
 

@@ -106,15 +106,6 @@
 						<br>
 
 
-						<a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/servicios">
-							Servicios
-						</a>
-
-						<a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/factura">
-							Revisar Factura
-						</a>
-
-
 					</div>
 					</div>
 				</div>
@@ -133,26 +124,19 @@
 							<thead>
 								<tr>
 									<th class="mdl-data-table__cell--non-numeric">Servicio</th>
-									<th class="mdl-data-table__cell--non-numeric">Disponibilidad</th>
 									<th class="mdl-data-table__cell--non-numeric">Precio</th>
+									<th class="mdl-data-table__cell--non-numeric">Duración</th>
 								</tr>
 							</thead>
 							<tbody>
+								<% serviciost.forEach(function(serv)  { %>
 								<tr>
-									<td class="mdl-data-table__cell--non-numeric">Frenos</td>
-									<td>Si</td>
-									<td>$300</td>
+									<td><%= serv.nombre %></td>
+									<td><%= serv.costo %></td>
+									<td><%= serv.duracion %></td>
 								</tr>
 								<tr>
-									<td class="mdl-data-table__cell--non-numeric">Cambio de Aceite</td>
-									<td>Si</td>
-									<td>$594</td>
-								</tr>
-								<tr>
-									<td class="mdl-data-table__cell--non-numeric">Motor</td>
-									<td>Si</td>
-									<td>$1000</td>
-								</tr>
+								<% }); %>
 							</tbody>
 						</table>
 
@@ -169,22 +153,26 @@
 								<h2 class="mdl-card__title-text">Solicitud de Servicios</h2>
 							</div>
 							<div class="mdl-card__supporting-text">
-								<form action="#">
+								
+								<form action="/registrarexitoso" method="POST">
 									<div class="mdl-textfield mdl-js-textfield">
-										<input class="mdl-textfield__input" type="text" id="placa" />
+										<input class="mdl-textfield__input" type="text" name="placa" />
 										<label class="mdl-textfield__label" for="placa">Placa</label>
 									</div>
-									<select style="padding-top: 7px; padding-bottom: 7px;">
+									<select name="servicio" style="padding-top: 7px; padding-bottom: 7px;">
 										<option value="" disabled selected>Servicios</option>
-										<option value="1">Frenos</option>
-										<option value="2">Cambio de Aceite</option>
-										<option value="3">Motor</option>
+
+										<% serviciost.forEach(function(serv)  { %>
+										<option value="<%= serv.id %>"><%= serv.nombre %></option>
+										<% }); %>
 									</select>
+									<div class="mdl-card__actions mdl-card--border">
+										<button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Aceptar</button>
+									</div>
 								</form>
+
 							</div>
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/inicio-cliente">Aceptar</a>
-							</div>
+							
 						</div>
 					</main>
 				</div>

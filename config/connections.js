@@ -28,9 +28,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
+  /*localDiskDb: {
     adapter: 'sails-disk'
-  },
+  },*/
 
   /***************************************************************************
   *                                                                          *
@@ -47,15 +47,18 @@ module.exports.connections = {
   //   password: 'YOUR_MYSQL_PASSWORD', //optional
   //   database: 'YOUR_MYSQL_DB' //optional
   // },
-/*
+
   sailsMSSQLServer: {
     adapter: 'sails-sqlserver',
     user: 'autoservicio',
     password: '123',
     host: 'localhost',
-    database: 'Autoservicio'
+    database: 'Autoservicio',
+    options: {
+      encrypt: true
+    }
 }
-*/
+
   /***************************************************************************
   *                                                                          *
   * MongoDB is the leading NoSQL database.                                   *
