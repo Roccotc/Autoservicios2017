@@ -8,7 +8,7 @@
 module.exports = {
 
   //connection: 'sailsMSSQLServer',
-
+/*
    schema: true,
     connection: 'sqlserver',
     tableName: 'usuarios',
@@ -29,13 +29,13 @@ module.exports = {
   		type: 'string',
   		email: true,
   		required: true,
-  		unique: true,
+
   	},
 
     cedula : {
       type: 'string',
       required: true,
-      unique: true,
+
     },
 
     telefono : {
@@ -52,4 +52,5 @@ module.exports = {
     },
 
   }
+  */
 };

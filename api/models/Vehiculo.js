@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
 
     //connection: 'sailsMSSQLServer',
-
+/*
      schema: true,
     connection: 'sqlserver',
     tableName: 'vehiculo',
@@ -33,7 +33,7 @@ module.exports = {
   	placa : {
   		type: 'string',
   		required: true,
-  		unique: true,
+
   	},
 
   	tipo : {
@@ -53,6 +53,6 @@ module.exports = {
   		type: 'int',
   		required: true,
   	},
-
+*/
   }
 };

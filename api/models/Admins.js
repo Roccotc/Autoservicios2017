@@ -26,7 +26,6 @@ module.exports = {
   		type: 'string',
   		email: true,
   		required: true,
-  		unique: true,
   	},
 
     clave: {

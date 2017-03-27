@@ -13,6 +13,8 @@ module.exports = {
 
   attributes: {
 
+    is_s: {primaryKey: true},
+
   	nombre : { 
   		type: 'string',
   		required: true,

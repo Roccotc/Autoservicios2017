@@ -53,6 +53,7 @@ module.exports.connections = {
     user: 'autoservicio',
     password: '123',
     host: 'localhost',
+    port: 1433,
     database: 'Autoservicio',
 }
 
