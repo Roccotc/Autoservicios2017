@@ -58,10 +58,43 @@ module.exports = {
   },
 
 	reportes: function (req, res) {
+// PRIMER QUERY
+		/*Servicios.query('SELECT SUM(costo) AS IngresosTotales FROM orden_Servicio INNER JOIN detalle_orden on orden_Servicio.id = detalle_orden.orden_id INNER JOIN servicios on  detalle_orden.servicio_id = servicios.id',
+				function(err, total){
 
-		
+					var IngresosTotales = total[0].IngresosTotales;
 
-		return res.view('reportes-admin');
+					Servicios.query('SELECT servicios.nombre,  SUM(costo) AS Ingreso FROM orden_Servicio INNER JOIN detalle_orden on orden_Servicio.id = detalle_orden.orden_id INNER JOIN servicios on  detalle_orden.servicio_id = servicios.id  group by servicios.nombre order by Ingreso',
+						function(err, ingresos){
+
+							return res.view('reportes-admin',{ data1: { IngresosTotales: IngresosTotales, IngresosPorServicio: ingresos } });
+
+						});
+
+				});*/
+// SEGUNDO QUERY
+				/* Servicios.query('SELECT servicios.nombre as Servicio, COUNT(servicio_id) AS Ocurrencia FROM  detalle_orden INNER JOIN servicios on detalle_orden.servicio_id = servicios.id GROUP BY servicio_id  ORDER BY Ocurrencia DESC LIMIT  1;',
+					function(err, result){
+
+						var data2 = {servicioMasPedido: result.Servicio, numeroDeVecesPedido: result.Ocurrencia};
+
+					});
+					*/
+// TERCER QUERY
+					/*Servicios.query('SELECT vehiculo.marca as Vehiculo, count(vehiculo_id) as Ocurrencia from vehiculo INNER JOIN orden_servicio ON vehiculo.id =  orden_servicio.vehiculo_id group by vehiculo.marca order by Ocurrencia desc',
+						function(err, result2){
+
+							var data2 = {vehiculoMasFrecuente: result2.Vehiculo, numeroDeVecesVehiculo: result2.Ocurrencia};
+
+						});
+*/
+
+
+				var IngresosTotales = 13000;
+				var ingresos;
+				var servicioMasPedido = 'Revision';
+				return res.view('reportes-admin',{ data1: { IngresosTotales: IngresosTotales, IngresosPorServicio: ingresos }, servicioMasPedido: servicioMasPedido   });
+
 },
 
 };

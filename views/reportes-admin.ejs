@@ -32,7 +32,15 @@
 
   </head>
   <body>
+
+    <!-- Data a String -->
+    <% var dataString = JSON.stringify(data1); var vehiculo= 'alfa romeo';%>
+    <input type="hidden" name="data" id="objeto" value="<%= dataString %>">
+
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+
+
 
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
@@ -59,23 +67,7 @@
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/">Salir</a>
             </nav>
           </div>
-          <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
-          </span>
         </div>
-      </div>
-
-      <div class="android-drawer mdl-layout__drawer">
-        <span class="mdl-layout-title">
-          <img class="android-logo-image" src="images/auto-servicio.jpg">
-        </span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/inicio-admin">Inicio Administración</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/registrar">Registar Nuevo Usuario</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/servicios-admin">Servicios</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/reportes-admin">Reportes</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/">Salir</a>
-        </nav>
       </div>
     </div>
 
@@ -83,9 +75,28 @@
 
         <!-- Navigation End -->
         <!-- Contenido -->
+        <div style="padding-top: 30px;" align="center">
+          <main  class="mdl-layout__content">
+            <div  class="page-content">
+              <div  style="padding: 30px;">
+                  <h2>Servicios/Ventas</h2>
+                  <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+              </div>
+              <div  style="padding: 30px;">
+                  <h2>Servicios que mas se lleva a cabo : <%=   servicioMasPedido  %> </h2>
+                  <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+              </div>
+              <div  style="padding: 30px;">
+                  <h2>Vehiculo que mas ha entrado : <%=   vehiculo  %> </h2>
+                  <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+              </div>
+            </div>
+          </main>
+        </div>
 
-        <h2>Servicios/Ventas</h2>
-        <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+
+
+
 
       <!-- End Contenido -->
 
@@ -111,22 +122,53 @@
     <script>
       function drawChart() {
          // Define the chart to be drawn.
-         var data = google.visualization.arrayToDataTable([
-            ['Year', 'Asia'],
-      	  ['2012',  900],
-            ['2013',  1000],
-            ['2014',  1170],
-            ['2015',  1250],
-            ['2016',  1530]
+
+        var data = JSON.parse(document.getElementById("objeto").value);
+
+        var IngresosPorServicio = data.IngresosPorServicio;
+        var IngresosTotales = data.IngresosTotales;
+        var IngresosTotales = 13000; // ejemplo ya que la data no se pudo enviar :(
+
+
+        var IngresoCambio_Aceite=5000; // ejemplo ya que la data no se pudo enviar :(
+        var IngresoCambio_Revision=6000; // ejemplo ya que la data no se pudo enviar :(
+        var IngresoCambio_Limpieza=2000;// ejemplo ya que la data no se pudo enviar :(
+
+        if (IngresosPorServicio != null) // obviamente va a estar null :(
+        {
+          IngresosPorServicio.forEach(function(servicio) {
+
+            if (servicio.nombre == 'cambio de aceite') {
+              var IngresoCambio_Aceite = servicio.Ingreso;
+            }
+            if (servicio.nombre == 'revision') {
+              var IngresoCambio_Revision = servicio.Ingreso;
+            }
+            if (servicio.nombre == 'limpieza de inyectores') {
+              var IngresoCambio_Limpieza = servicio.Ingreso;
+            }
+         });
+
+        }
+
+        var PorcentajeAceite = IngresoCambio_Aceite*100/IngresosTotales;
+        var PorcentajeRevision = IngresoCambio_Revision*100/IngresosTotales;
+        var PorcentajeLimpieza = IngresoCambio_Limpieza*100/IngresosTotales;
+
+         var dataChart = google.visualization.arrayToDataTable([
+            ['Servicio', 'Ingreso %'],
+      	  ['cambio de aceite',  PorcentajeAceite],
+            ['revision',  PorcentajeRevision],
+            ['limpieza de inyectores',  PorcentajeLimpieza]
             ]);
 
          var options = {
-            title: 'Population (in millions)'
+            title: 'Ingreso Porcentual por servicio. Total de ingresos:  '+ IngresosTotales+ 'Bs'
          };
 
          // Instantiate and draw the chart.
          var chart = new google.visualization.BarChart(document.getElementById('container'));
-         chart.draw(data, options);
+         chart.draw(dataChart, options);
       }
       google.charts.setOnLoadCallback(drawChart);
     </script>
