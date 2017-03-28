@@ -43,6 +43,7 @@ module.exports.routes = {
   '/inicio-cliente'  :  'ServiciosController.carga',
   '/factura'  : { view: 'factura'},
   '/reportes-admin'  : 'AdminsController.reportes',
+  '/servicios-admin'  : 'AdminsController.servicios_admin',
   'POST /registrarexitoso' : 'ServiciosController.agregarserv',
 
 

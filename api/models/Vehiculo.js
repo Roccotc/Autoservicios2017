@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
 
-    //connection: 'sailsMSSQLServer',
+
 
     schema: true,
     connection: 'sqlserver',
@@ -17,41 +17,37 @@ module.exports = {
 
   	marca : {
   		type: 'string',
-  		required: true,
+  		
   	},
 
   	modelo : {
   		type: 'string',
-  		required: true,
+  		
   	},
 
   	cilindrada : {
   		type: 'string',
-  		required: true,
+  		
   	},
 
   	placa : {
   		type: 'string',
-  		required: true,
+  		
 
   	},
 
   	tipo : {
   		type: 'string',
-  		required: true,
+  		
   	},
 
   	año : {
   		type: 'int',
   	},
 
-  	numero_visita : {
-  		type: 'int',
-  	},
-
   	user_id : {
   		type: 'int',
-  		required: true,
+  		
   	},
 
   }
