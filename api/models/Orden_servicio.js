@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-/*
+
    schema: true,
     connection: 'sqlserver',
     tableName: 'orden_servicio',
@@ -34,6 +34,6 @@ module.exports = {
   	},
 
   }
-*/
+
 };
 

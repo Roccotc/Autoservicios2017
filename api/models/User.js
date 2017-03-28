@@ -8,10 +8,10 @@
 module.exports = {
 
   //connection: 'sailsMSSQLServer',
-/*
+
    schema: true,
     connection: 'sqlserver',
-    tableName: 'usuarios',
+    tableName: 'user',
 
   attributes: {
 
@@ -52,5 +52,5 @@ module.exports = {
     },
 
   }
-  */
+  
 };
