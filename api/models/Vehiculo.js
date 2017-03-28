@@ -11,7 +11,7 @@ module.exports = {
 
     //connection: 'sailsMSSQLServer',
 
-     schema: true,
+    schema: true,
     connection: 'sqlserver',
     tableName: 'vehiculo',
 

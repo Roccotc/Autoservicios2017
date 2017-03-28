@@ -11,7 +11,7 @@ module.exports = {
 
    schema: true,
     connection: 'sqlserver',
-    tableName: 'user',
+    tableName: 'usuarios',
 
   attributes: {
 
