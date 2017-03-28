@@ -7,7 +7,13 @@
 
 module.exports = {
 
+schema: true,
+    connection: 'sqlserver',
+    tableName: 'Facturas',
+    migrate: 'safe',
+
   attributes: {
+
 
     cedulaCliente : {
   		type: 'string',
